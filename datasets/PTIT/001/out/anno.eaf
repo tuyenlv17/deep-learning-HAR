@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ANNOTATION_DOCUMENT AUTHOR="" DATE="2017-10-10T05:21:26+07:00" FORMAT="2.8" VERSION="2.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv2.8.xsd">
+    <HEADER MEDIA_FILE="" TIME_UNITS="milliseconds">
+        <MEDIA_DESCRIPTOR MEDIA_URL="file:///E:/Android/DoAn/Data/Data/A quy/out/20170930_101332.mp4" MIME_TYPE="video/mp4" RELATIVE_MEDIA_URL="./20170930_101332.mp4"/>
+        <LINKED_FILE_DESCRIPTOR LINK_URL="file:///E:/Android/DoAn/Data/Data/A quy/out/Aquy_Giay_Out_new.csv" MIME_TYPE="unknown" RELATIVE_LINK_URL="./Aquy_Giay_Out_new.csv"/>
+        <LINKED_FILE_DESCRIPTOR LINK_URL="file:///E:/Android/DoAn/Data/Data/A quy/out/AQuy_OUT_tsconf.xml" MIME_TYPE="text/xml" RELATIVE_LINK_URL="./AQuy_OUT_tsconf.xml"/>
+        <LINKED_FILE_DESCRIPTOR LINK_URL="file:///E:/Android/DoAn/Data/Data/A quy/out/A_Quy_Watch_OUT_new.txt" MIME_TYPE="text/plain" RELATIVE_LINK_URL="./A_Quy_Watch_OUT_new.txt"/>
+        <PROPERTY NAME="URN">urn:nl-mpi-tools-elan-eaf:5c8f4d2e-8a1b-4ed6-a2cc-371aa720445b</PROPERTY>
+        <PROPERTY NAME="lastUsedAnnotationId">8</PROPERTY>
+    </HEADER>
+    <TIME_ORDER>
+        <TIME_SLOT TIME_SLOT_ID="ts1" TIME_VALUE="8570"/>
+        <TIME_SLOT TIME_SLOT_ID="ts2" TIME_VALUE="70444"/>
+        <TIME_SLOT TIME_SLOT_ID="ts3" TIME_VALUE="76607"/>
+        <TIME_SLOT TIME_SLOT_ID="ts4" TIME_VALUE="132331"/>
+        <TIME_SLOT TIME_SLOT_ID="ts5" TIME_VALUE="139606"/>
+        <TIME_SLOT TIME_SLOT_ID="ts6" TIME_VALUE="193278"/>
+        <TIME_SLOT TIME_SLOT_ID="ts7" TIME_VALUE="201227"/>
+        <TIME_SLOT TIME_SLOT_ID="ts8" TIME_VALUE="255063"/>
+        <TIME_SLOT TIME_SLOT_ID="ts9" TIME_VALUE="262084"/>
+        <TIME_SLOT TIME_SLOT_ID="ts10" TIME_VALUE="376409"/>
+        <TIME_SLOT TIME_SLOT_ID="ts11" TIME_VALUE="385676"/>
+        <TIME_SLOT TIME_SLOT_ID="ts12" TIME_VALUE="495132"/>
+        <TIME_SLOT TIME_SLOT_ID="ts13" TIME_VALUE="505200"/>
+        <TIME_SLOT TIME_SLOT_ID="ts14" TIME_VALUE="620079"/>
+        <TIME_SLOT TIME_SLOT_ID="ts15" TIME_VALUE="639478"/>
+        <TIME_SLOT TIME_SLOT_ID="ts16" TIME_VALUE="762434"/>
+    </TIME_ORDER>
+    <TIER LINGUISTIC_TYPE_REF="default-lt" TIER_ID="default">
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a1" TIME_SLOT_REF1="ts1" TIME_SLOT_REF2="ts2">
+                <ANNOTATION_VALUE>wrist</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a2" TIME_SLOT_REF1="ts3" TIME_SLOT_REF2="ts4">
+                <ANNOTATION_VALUE>ankle</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a3" TIME_SLOT_REF1="ts5" TIME_SLOT_REF2="ts6">
+                <ANNOTATION_VALUE>haunch</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a4" TIME_SLOT_REF1="ts7" TIME_SLOT_REF2="ts8">
+                <ANNOTATION_VALUE>knee</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a5" TIME_SLOT_REF1="ts9" TIME_SLOT_REF2="ts10">
+                <ANNOTATION_VALUE>walking</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a6" TIME_SLOT_REF1="ts11" TIME_SLOT_REF2="ts12">
+                <ANNOTATION_VALUE>running</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a7" TIME_SLOT_REF1="ts13" TIME_SLOT_REF2="ts14">
+                <ANNOTATION_VALUE>kicking</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a8" TIME_SLOT_REF1="ts15" TIME_SLOT_REF2="ts16">
+                <ANNOTATION_VALUE>cycling</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+    </TIER>
+    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="default-lt" TIME_ALIGNABLE="true"/>
+    <CONSTRAINT DESCRIPTION="Time subdivision of parent annotation's time interval, no time gaps allowed within this interval" STEREOTYPE="Time_Subdivision"/>
+    <CONSTRAINT DESCRIPTION="Symbolic subdivision of a parent annotation. Annotations refering to the same parent are ordered" STEREOTYPE="Symbolic_Subdivision"/>
+    <CONSTRAINT DESCRIPTION="1-1 association with a parent annotation" STEREOTYPE="Symbolic_Association"/>
+    <CONSTRAINT DESCRIPTION="Time alignable annotations within the parent annotation's time interval, gaps are allowed" STEREOTYPE="Included_In"/>
+</ANNOTATION_DOCUMENT>

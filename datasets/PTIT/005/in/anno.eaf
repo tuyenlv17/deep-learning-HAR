@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ANNOTATION_DOCUMENT AUTHOR="" DATE="2017-10-10T00:32:30+07:00" FORMAT="2.8" VERSION="2.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv2.8.xsd">
+    <HEADER MEDIA_FILE="" TIME_UNITS="milliseconds">
+        <MEDIA_DESCRIPTOR MEDIA_URL="file:///E:/DATA-20171008T164225Z-001/DATA/Linh/in/20171001_111003.mp4" MIME_TYPE="video/mp4" RELATIVE_MEDIA_URL="./20171001_111003.mp4" TIME_ORIGIN="2157"/>
+        <LINKED_FILE_DESCRIPTOR LINK_URL="file:///E:/DATA-20171008T164225Z-001/DATA/Linh/in/fix-2017-10-01_11_10_02HOUSE.txt" MIME_TYPE="text/plain" RELATIVE_LINK_URL="./fix-2017-10-01_11_10_02HOUSE.txt" TIME_ORIGIN="5059"/>
+        <LINKED_FILE_DESCRIPTOR LINK_URL="file:///E:/DATA-20171008T164225Z-001/DATA/Linh/in/fix-linh_trong_nha-2017-10-01-11-10-02.csv" MIME_TYPE="unknown" RELATIVE_LINK_URL="./fix-linh_trong_nha-2017-10-01-11-10-02.csv" TIME_ORIGIN="5800"/>
+        <LINKED_FILE_DESCRIPTOR LINK_URL="file:///E:/DATA-20171008T164225Z-001/DATA/Linh/in/sync_tsconf.xml" MIME_TYPE="text/xml" RELATIVE_LINK_URL="./sync_tsconf.xml"/>
+        <PROPERTY NAME="URN">urn:nl-mpi-tools-elan-eaf:f087dd18-4286-45e5-baa6-809936b01890</PROPERTY>
+        <PROPERTY NAME="lastUsedAnnotationId">11</PROPERTY>
+    </HEADER>
+    <TIME_ORDER>
+        <TIME_SLOT TIME_SLOT_ID="ts1" TIME_VALUE="11400"/>
+        <TIME_SLOT TIME_SLOT_ID="ts2" TIME_VALUE="84400"/>
+        <TIME_SLOT TIME_SLOT_ID="ts3" TIME_VALUE="92700"/>
+        <TIME_SLOT TIME_SLOT_ID="ts4" TIME_VALUE="103900"/>
+        <TIME_SLOT TIME_SLOT_ID="ts5" TIME_VALUE="107850"/>
+        <TIME_SLOT TIME_SLOT_ID="ts6" TIME_VALUE="116650"/>
+        <TIME_SLOT TIME_SLOT_ID="ts7" TIME_VALUE="136900"/>
+        <TIME_SLOT TIME_SLOT_ID="ts8" TIME_VALUE="222600"/>
+        <TIME_SLOT TIME_SLOT_ID="ts9" TIME_VALUE="228500"/>
+        <TIME_SLOT TIME_SLOT_ID="ts10" TIME_VALUE="315400"/>
+        <TIME_SLOT TIME_SLOT_ID="ts11" TIME_VALUE="320200"/>
+        <TIME_SLOT TIME_SLOT_ID="ts12" TIME_VALUE="385900"/>
+        <TIME_SLOT TIME_SLOT_ID="ts13" TIME_VALUE="397300"/>
+        <TIME_SLOT TIME_SLOT_ID="ts14" TIME_VALUE="524000"/>
+        <TIME_SLOT TIME_SLOT_ID="ts15" TIME_VALUE="529300"/>
+        <TIME_SLOT TIME_SLOT_ID="ts16" TIME_VALUE="628400"/>
+        <TIME_SLOT TIME_SLOT_ID="ts17" TIME_VALUE="638000"/>
+        <TIME_SLOT TIME_SLOT_ID="ts18" TIME_VALUE="758700"/>
+        <TIME_SLOT TIME_SLOT_ID="ts19" TIME_VALUE="779600"/>
+        <TIME_SLOT TIME_SLOT_ID="ts20" TIME_VALUE="853400"/>
+        <TIME_SLOT TIME_SLOT_ID="ts21" TIME_VALUE="854800"/>
+        <TIME_SLOT TIME_SLOT_ID="ts22" TIME_VALUE="927900"/>
+    </TIME_ORDER>
+    <TIER LINGUISTIC_TYPE_REF="default-lt" TIER_ID="default">
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a1" TIME_SLOT_REF1="ts1" TIME_SLOT_REF2="ts2">
+                <ANNOTATION_VALUE>brushing</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a2" TIME_SLOT_REF1="ts3" TIME_SLOT_REF2="ts4">
+                <ANNOTATION_VALUE>brushing</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a3" TIME_SLOT_REF1="ts5" TIME_SLOT_REF2="ts6">
+                <ANNOTATION_VALUE>brushing</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a4" TIME_SLOT_REF1="ts7" TIME_SLOT_REF2="ts8">
+                <ANNOTATION_VALUE>washing_hand</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a5" TIME_SLOT_REF1="ts9" TIME_SLOT_REF2="ts10">
+                <ANNOTATION_VALUE>wipe</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a6" TIME_SLOT_REF1="ts11" TIME_SLOT_REF2="ts12">
+                <ANNOTATION_VALUE>sweep_floor</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a7" TIME_SLOT_REF1="ts13" TIME_SLOT_REF2="ts14">
+                <ANNOTATION_VALUE>peel</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a8" TIME_SLOT_REF1="ts15" TIME_SLOT_REF2="ts16">
+                <ANNOTATION_VALUE>slice</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a9" TIME_SLOT_REF1="ts17" TIME_SLOT_REF2="ts18">
+                <ANNOTATION_VALUE>mixing</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a10" TIME_SLOT_REF1="ts19" TIME_SLOT_REF2="ts20">
+                <ANNOTATION_VALUE>upstair</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+        <ANNOTATION>
+            <ALIGNABLE_ANNOTATION ANNOTATION_ID="a11" TIME_SLOT_REF1="ts21" TIME_SLOT_REF2="ts22">
+                <ANNOTATION_VALUE>downstair</ANNOTATION_VALUE>
+            </ALIGNABLE_ANNOTATION>
+        </ANNOTATION>
+    </TIER>
+    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="default-lt" TIME_ALIGNABLE="true"/>
+    <CONSTRAINT DESCRIPTION="Time subdivision of parent annotation's time interval, no time gaps allowed within this interval" STEREOTYPE="Time_Subdivision"/>
+    <CONSTRAINT DESCRIPTION="Symbolic subdivision of a parent annotation. Annotations refering to the same parent are ordered" STEREOTYPE="Symbolic_Subdivision"/>
+    <CONSTRAINT DESCRIPTION="1-1 association with a parent annotation" STEREOTYPE="Symbolic_Association"/>
+    <CONSTRAINT DESCRIPTION="Time alignable annotations within the parent annotation's time interval, gaps are allowed" STEREOTYPE="Included_In"/>
+</ANNOTATION_DOCUMENT>
