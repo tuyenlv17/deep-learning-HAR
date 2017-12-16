@@ -11,7 +11,7 @@ def read_data(data_path, split = "train"):
 
     # Fixed params
     n_class = 18
-    n_steps = 150
+    n_steps = 128
 
     # Paths
     path_ = os.path.join(data_path, split)
@@ -32,7 +32,7 @@ def read_data(data_path, split = "train"):
     X = np.zeros((len(labels), n_steps, n_channels))
     i_ch = 0
     for fil_ch in channel_files:
-        channel_name = fil_ch[:-posix]
+        channel_name = fil_ch[:-4]
         dat_ = pd.read_csv(os.path.join(path_signals,fil_ch), delim_whitespace = True, header = None)
         X[:,:,i_ch] = dat_.as_matrix()
 
@@ -54,7 +54,7 @@ def standardize(train, test):
 
     return X_train, X_test
 
-def one_hot(labels, n_class = 6):
+def one_hot(labels, n_class = 18):
     """ One-hot encoding """
     expansion = np.eye(n_class)
     y = expansion[:, labels-1].T
