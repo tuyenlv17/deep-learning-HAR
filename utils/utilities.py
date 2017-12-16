@@ -9,6 +9,7 @@ import os
 NUM_CLASS = 18
 WINDOWN_SIZE = 128
 CHANNEL_LIST = ["x_sensor_acc","y_sensor_acc","z_sensor_acc","x_watch_acc","y_watch_gyr","z_watch_acc","x_watch_gyr","y_watch_acc","z_watch_gyr"]
+NUM_CHANNEL = 3
 
 def read_data(data_path, split = "train"):
     """ Read data """
