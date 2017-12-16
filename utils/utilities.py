@@ -6,12 +6,15 @@ import pandas as pd
 import numpy as np
 import os
 
+NUM_CLASS = 18
+WINDOWN_SIZE = 128
+
 def read_data(data_path, split = "train"):
     """ Read data """
 
     # Fixed params
     n_class = 18
-    n_steps = 128
+    n_steps = WINDOWN_SIZE
 
     # Paths
     path_ = os.path.join(data_path, split)
