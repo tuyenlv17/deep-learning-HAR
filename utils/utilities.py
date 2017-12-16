@@ -8,6 +8,7 @@ import os
 
 NUM_CLASS = 18
 WINDOWN_SIZE = 128
+CHANNEL_LIST = ["x_sensor_acc","y_sensor_acc","z_sensor_acc","x_watch_acc","y_watch_gyr","z_watch_acc","x_watch_gyr","y_watch_acc","z_watch_gyr"]
 
 def read_data(data_path, split = "train"):
     """ Read data """
@@ -36,6 +37,7 @@ def read_data(data_path, split = "train"):
     i_ch = 0
     for fil_ch in channel_files:
         channel_name = fil_ch[:-4]
+        print channel_name
         dat_ = pd.read_csv(os.path.join(path_signals,fil_ch), delim_whitespace = True, header = None)
         X[:,:,i_ch] = dat_.as_matrix()
 
