@@ -3,35 +3,40 @@
 
 # # HAR CNN training 
 
-# In[141]:
+# In[292]:
 
 
 # Imports
 import numpy as np
 import os
 from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
-get_ipython().magic(u'matplotlib inline')
+from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import precision_score,     recall_score, confusion_matrix, classification_report,     accuracy_score, f1_score
+from utils import utilities
 
 
-# In[142]:
+# In[293]:
 
 
-get_ipython().magic(u'run utils/utilities.py')
+
+# In[294]:
+
+
+class_label_vn = [u"Cổ tay",u"Cổ chân",u"Bả vai",u"Xoay người",u"Xoay đầu gối",u"Đi bộ",u"Chạy",u"Đá bóng",u"Đạp xe",u"Đánh răng",u"Rửa tay",u"Lau bàn",u"Quét nhà",u"Nạo",u"Thái",u"Trộn",u"Lên cầu thang",u"Xuống cầu thang"]
 
 
 # ## Prepare data
 
-# In[143]:
+# In[295]:
 
 
 rootDatasetDir = "./datasets/PTIT/normalized"
-X_train, labels_train, list_ch_train = read_data(data_path=rootDatasetDir, split="train") # train
+X_train, labels_train, list_ch_train = read_data(data_path="./datasets/PTIT/normalized", split="train") # train
 X_test, labels_test, list_ch_test = read_data(data_path=rootDatasetDir, split="test") # test
 assert list_ch_train == list_ch_test, "Mistmatch in channels!"
 
 
-# In[144]:
+# In[296]:
 
 
 # Normalize?
@@ -40,7 +45,7 @@ X_train, X_test = standardize(X_train, X_test)
 
 # Train/Validation Split
 
-# In[145]:
+# In[297]:
 
 
 X_tr, X_vld, lab_tr, lab_vld = train_test_split(X_train, labels_train, 
@@ -49,7 +54,7 @@ X_tr, X_vld, lab_tr, lab_vld = train_test_split(X_train, labels_train,
 
 # One-hot encoding:
 
-# In[146]:
+# In[298]:
 
 
 y_tr = one_hot(lab_tr)
@@ -57,7 +62,7 @@ y_vld = one_hot(lab_vld)
 y_test = one_hot(labels_test)
 
 
-# In[147]:
+# In[299]:
 
 
 # Imports
@@ -66,22 +71,23 @@ import tensorflow as tf
 
 # ### Hyperparameters
 
-# In[148]:
+# In[300]:
 
 
 batch_size = 600       # Batch size
-seq_len = 128          # Number of steps
+seq_len = WINDOWN_SIZE          # Number of steps or window size
 learning_rate = 0.0001
 epochs = 1000
 
-n_classes = 18
-n_channels = 9
+n_classes = NUM_CLASS
+n_channels = NUM_CHANNEL
+print "n_channels %d" % n_channels
 
 
 # ### Construct the graph
 # Placeholders
 
-# In[149]:
+# In[301]:
 
 
 graph = tf.Graph()
@@ -96,7 +102,7 @@ with graph.as_default():
 
 # Build Convolutional Layers
 
-# In[151]:
+# In[302]:
 
 
 with graph.as_default():
@@ -123,7 +129,7 @@ with graph.as_default():
 
 # Now, flatten and pass to the classifier
 
-# In[152]:
+# In[303]:
 
 
 with graph.as_default():
@@ -225,26 +231,6 @@ with tf.Session(graph=graph) as sess:
 # Plot training and test loss
 t = np.arange(iteration-1)
 
-plt.figure(figsize = (6,6))
-plt.plot(t, np.array(train_loss), 'r-', t[t % 10 == 0], np.array(validation_loss), 'b*')
-plt.xlabel("iteration")
-plt.ylabel("Loss")
-plt.legend(['train', 'validation'], loc='upper right')
-plt.show()
-
-
-# In[ ]:
-
-
-# Plot Accuracies
-plt.figure(figsize = (6,6))
-
-plt.plot(t, np.array(train_acc), 'r-', t[t % 10 == 0], validation_acc, 'b*')
-plt.xlabel("iteration")
-plt.ylabel("Accuray")
-plt.legend(['train', 'validation'], loc='upper right')
-plt.show()
-
 
 # ## Evaluate on test set
 
@@ -252,17 +238,31 @@ plt.show()
 
 
 test_acc = []
-
+with graph.as_default():
+    prediction=tf.argmax(logits,1)
 with tf.Session(graph=graph) as sess:
     # Restore
     saver.restore(sess, tf.train.latest_checkpoint('checkpoints-cnn'))
-    
+    y_pred = []
+    y_true = []
     for x_t, y_t in get_batches(X_test, y_test, batch_size):
         feed = {inputs_: x_t,
                 labels_: y_t,
                 keep_prob_: 1}
+        batch_acc, batch_y_pred = sess.run([accuracy, prediction], feed_dict=feed)
+        y_pred.extend(batch_y_pred)
+        y_true.extend(np.where(r==1)[0][0] for r in y_t )
         
-        batch_acc = sess.run(accuracy, feed_dict=feed)
         test_acc.append(batch_acc)
     print("Test accuracy: {:.6f}".format(np.mean(test_acc)))
+#     print y_true
+#     print y_pred
+    sk_class_labels = [i for i in range(NUM_CLASS)]
+    print precision_recall_fscore_support(y_true, y_pred, average=None, labels=sk_class_labels)
+    print 'Accuracy:', accuracy_score(y_true, y_pred)
+    print 'F1 score:', f1_score(y_true, y_pred, average='micro')
+    print 'Recall:', recall_score(y_true, y_pred, average='micro')
+    print 'Precision:', precision_score(y_true, y_pred, average='micro')
+    print '\n clasification report:\n', classification_report(y_true,y_pred)
+    print '\n confussion matrix:\n',confusion_matrix(y_true, y_pred)
 
