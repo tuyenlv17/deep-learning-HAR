@@ -10,6 +10,7 @@ CHANNEL_LIST = ["x_sensor_acc","y_sensor_acc","z_sensor_acc","x_watch_acc","y_wa
 NUM_CHANNEL = len(CHANNEL_LIST)
 
 class_label = ["wrist","ankle","shoulder","haunch","knee","walking","running","cycling","brushing","washing_hand","slice","mixing","upstair","downstair"]
+class_label=["wrist","ankle","shoulder","haunch","knee","walking","running","kicking","cycling","brushing","washing_hand","wipe","sweep_floor","peel","slice","mixing","upstair","downstair"]
 NUM_CLASS = len(class_label)
 class_label_int = {val:str(idx) for idx, val in enumerate(class_label)}
 

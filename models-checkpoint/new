@@ -1,0 +1,105 @@
+Accuracy: 0.92
+F1 score: 0.917094636832
+Recall: 0.918724491479
+Precision: 0.925341691808
+
+ clasification report:
+             precision    recall  f1-score   support
+
+          0    0.95238   1.00000   0.97561        40
+          1    1.00000   0.80952   0.89474        42
+          2    0.93750   1.00000   0.96774        30
+          3    1.00000   0.92857   0.96296        28
+          4    0.93023   0.91954   0.92486        87
+          5    0.82051   0.78049   0.80000        41
+          6    1.00000   1.00000   1.00000        16
+          7    1.00000   1.00000   1.00000        32
+          8    0.83721   1.00000   0.91139        36
+          9    1.00000   1.00000   1.00000        74
+         10    0.94286   0.91667   0.92958        72
+         11    0.62500   0.88235   0.73171        34
+         12    0.90909   0.62500   0.74074        32
+         16    1.00000   1.00000   1.00000        36
+
+avg / total    0.92860   0.92000   0.92030       600
+
+
+ confussion matrix:
+/usr/lib/python2.7/dist-packages/scipy/sparse/coo.py:200: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute
+ or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if np.rank(self.data) != 1 or np.rank(self.row) != 1 or np.rank(self.col) != 1:
+[[40  0  0  0  0  0  0  0  0  0  0  0  0  0]
+ [ 0 34  0  0  2  2  0  0  0  0  0  4  0  0]
+ [ 0  0 30  0  0  0  0  0  0  0  0  0  0  0]
+ [ 0  0  0 26  0  0  0  0  0  0  0  2  0  0]
+ [ 0  0  0  0 80  3  0  0  0  0  0  4  0  0]
+ [ 2  0  0  0  2 32  0  0  1  0  2  0  2  0]
+ [ 0  0  0  0  0  0 16  0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0 32  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0  0 36  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0  0  0 74  0  0  0  0]
+ [ 0  0  0  0  0  0  0  0  6  0 66  0  0  0]
+ [ 0  0  0  0  0  2  0  0  0  0  2 30  0  0]
+ [ 0  0  2  0  2  0  0  0  0  0  0  8 20  0]
+ [ 0  0  0  0  0  0  0  0  0  0  0  0  0 36]]
+
+ Test accuracy: 0.890000
+/home/ubuntu/.local/lib/python2.7/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-sco
+re are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/home/ubuntu/.local/lib/python2.7/site-packages/sklearn/metrics/classification.py:1137: UndefinedMetricWarning: Recall and F-score
+are ill-defined and being set to 0.0 in labels with no true samples.
+  'recall', 'true', average, warn_for)
+(0.0, 0.0, 0.0, None)
+Accuracy: 0.89
+F1 score: 0.878644929384
+Recall: 0.880952156326
+Precision: 0.885964133873
+
+ clasification report:
+             precision    recall  f1-score   support
+
+          0    0.83333   1.00000   0.90909        60
+          1    1.00000   0.76190   0.86486        63
+          2    0.75000   1.00000   0.85714        45
+          3    1.00000   0.78571   0.88000        42
+          4    0.86325   0.89381   0.87826       113
+          5    0.73973   0.65854   0.69677        82
+          6    0.87719   0.71429   0.78740        70
+          7    0.84211   1.00000   0.91429        32
+          8    1.00000   0.87500   0.93333        48
+          9    0.91525   1.00000   0.95575        54
+         10    0.90000   0.83333   0.86538        54
+         11    1.00000   1.00000   1.00000        60
+         12    1.00000   1.00000   1.00000       105
+         13    0.98230   1.00000   0.99107       111
+         14    0.90000   1.00000   0.94737       108
+         15    0.61111   0.64706   0.62857        51
+         16    0.78571   0.68750   0.73333        48
+         17    0.94737   1.00000   0.97297        54
+
+avg / total    0.89384   0.89000   0.88798      1200
+
+
+ confussion matrix:
+/usr/lib/python2.7/dist-packages/scipy/sparse/coo.py:200: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute
+ or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if np.rank(self.data) != 1 or np.rank(self.row) != 1 or np.rank(self.col) != 1:
+[[ 60   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
+ [  0  48   9   0   0   3   0   0   0   0   0   0   0   0   0   3   0   0]
+ [  0   0  45   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
+ [  6   0   0  33   0   0   0   0   0   0   0   0   0   0   0   3   0   0]
+ [  0   0   0   0 101   8   0   0   0   0   0   0   0   0   0   4   0   0]
+ [  2   0   0   0   8  54   4   0   0   0   2   0   0   0   0   8   4   0]
+ [  4   0   0   0   2   2  50   6   0   2   0   0   0   2   0   0   2   0]
+ [  0   0   0   0   0   0   0  32   0   0   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0  42   3   0   0   0   0   3   0   0   0]
+ [  0   0   0   0   0   0   0   0   0  54   0   0   0   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0  45   0   0   0   9   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0  60   0   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0 105   0   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0 111   0   0   0   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0 108   0   0   0]
+ [  0   0   0   0   3   3   3   0   0   0   3   0   0   0   0  33   3   3]
+ [  0   0   6   0   3   3   0   0   0   0   0   0   0   0   0   3  33   0]
+ [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  54]]
