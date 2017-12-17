@@ -16,7 +16,7 @@ WINDOWN_SIZE = 128
 CHANNEL_LIST = ["x_sensor_acc","y_sensor_acc","z_sensor_acc","x_watch_acc","y_watch_gyr","z_watch_acc","x_watch_gyr","y_watch_acc","z_watch_gyr"]
 NUM_CHANNEL = len(CHANNEL_LIST)
 
-class_label = ["wrist","ankle","shoulder","haunch","knee","walking","running","kicking","cycling","brushing","washing_hand","wipe","sweep_floor","peel","slice","mixing","upstair","downstair"]
+class_label = ["wrist","ankle","shoulder","haunch","knee","walking","running","kicking","cycling","brushing","washing_hand","sweep_floor","peel","slice","mixing","upstair","downstair"]
 NUM_CLASS = len(class_label)
 class_label_int = {val:str(idx) for idx, val in enumerate(class_label)}
 
@@ -108,7 +108,7 @@ from sklearn.metrics import precision_score,     recall_score, confusion_matrix,
 # In[294]:
 
 
-class_label_vn = [u"Cổ tay",u"Cổ chân",u"Bả vai",u"Xoay người",u"Xoay đầu gối",u"Đi bộ",u"Chạy",u"Đá bóng",u"Đạp xe",u"Đánh răng",u"Rửa tay",u"Lau bàn",u"Quét nhà",u"Nạo",u"Thái",u"Trộn",u"Lên cầu thang",u"Xuống cầu thang"]
+class_label_vn = [u"Cổ tay",u"Cổ chân",u"Bả vai",u"Xoay người",u"Xoay đầu gối",u"Đi bộ",u"Chạy",u"Đạp xe",u"Đánh răng",u"Rửa tay",u"Thái",u"Trộn",u"Lên cầu thang",u"Xuống cầu thang"]
 
 
 # ## Prepare data
@@ -339,11 +339,11 @@ with tf.Session(graph=graph) as sess:
 #     print y_true
 #     print y_pred
     sk_class_labels = [i for i in range(NUM_CLASS)]
-    print precision_recall_fscore_support(y_true, y_pred, average=None, labels=sk_class_labels)
+    print precision_recall_fscore_support(y_true, y_pred, average=None, labels=class_label)
     print 'Accuracy:', accuracy_score(y_true, y_pred)
     print 'F1 score:', f1_score(y_true, y_pred, average='micro')
     print 'Recall:', recall_score(y_true, y_pred, average='micro')
     print 'Precision:', precision_score(y_true, y_pred, average='micro')
-    print '\n clasification report:\n', classification_report(y_true,y_pred)
+    print '\n clasification report:\n', classification_report(y_true,y_pred,digits=5,labels=class_label)
     print '\n confussion matrix:\n',confusion_matrix(y_true, y_pred)
 

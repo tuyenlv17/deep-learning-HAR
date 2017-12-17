@@ -18,6 +18,5 @@ mv tools-bin/cudnn/cuda/include/cudnn.h tools-bin/cuda/include/
 mv tools-bin/cudnn/cuda/lib64/* tools-bin/cuda/lib64/
 # env
 echo "add to profile export PATH=\"$CUDA_DIR/bin:\$PATH\""
-echo "export PATH=\"$CUDA_DIR/bin:\$PATH\"" >> ~/.profile
-echo "export LD_LIBRARY_PATH=\"$CUDA_DIR/lib64:\$LD_LIBRARY_PATH\"" >> ~/.profile
-. ~/.bashrc
+echo "export PATH=\"$CUDA_DIR/bin:\$PATH\"" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH=\"$CUDA_DIR/lib64:\$LD_LIBRARY_PATH\"" >> ~/.bashrc

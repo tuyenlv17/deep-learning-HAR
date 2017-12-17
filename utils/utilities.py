@@ -9,7 +9,7 @@ WINDOWN_SIZE = 128
 CHANNEL_LIST = ["x_sensor_acc","y_sensor_acc","z_sensor_acc","x_watch_acc","y_watch_gyr","z_watch_acc","x_watch_gyr","y_watch_acc","z_watch_gyr"]
 NUM_CHANNEL = len(CHANNEL_LIST)
 
-class_label = ["wrist","ankle","shoulder","haunch","knee","walking","running","cycling","brushing","washing_hand","wipe","peel","slice","mixing","upstair","downstair"]
+class_label = ["wrist","ankle","shoulder","haunch","knee","walking","running","cycling","brushing","washing_hand","slice","mixing","upstair","downstair"]
 NUM_CLASS = len(class_label)
 class_label_int = {val:str(idx) for idx, val in enumerate(class_label)}
 
