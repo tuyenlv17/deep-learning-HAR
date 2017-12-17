@@ -279,6 +279,7 @@ def randomTrainFile():
                 wf.write(record[file_idx] + "\n")
     print(total0, total10)
 
+res = []
 for cdir in ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011","013", "014"]:
     os.system(u'rm -rf datasets/PTIT/normalized*')
     #!mkdir -p datasets/PTIT/normalized/{train,test}/sensor
@@ -288,4 +289,5 @@ for cdir in ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010
     os.system(u'mkdir -p datasets/PTIT/normalized_random/test/sensor')
     prepareTempTrainTestFormat([cdir])
     randomTrainFile()
-    print train()
+    res.append(train())
+print res

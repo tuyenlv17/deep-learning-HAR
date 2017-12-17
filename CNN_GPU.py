@@ -270,16 +270,6 @@ def train():
                 loss, _ , acc = sess.run([cost, optimizer, accuracy], feed_dict = feed)
                 train_acc.append(acc)
                 train_loss.append(loss)
-
-                # Print at each 5 iters
-                if (iteration % 5 == 0):
-                    print("Epoch: {}/{}".format(e, epochs),
-                          "Iteration: {:d}".format(iteration),
-                          "Train loss: {:6f}".format(loss),
-                          "Train acc: {:.6f}".format(acc))
-
-
-
                 # Iterate 
                 iteration += 1
 
