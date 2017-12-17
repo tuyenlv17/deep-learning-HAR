@@ -330,4 +330,4 @@ def train():
         print '\n clasification report:\n', classification_report(y_true,y_pred,digits=5)
         print '\n confussion matrix:\n',confusion_matrix(y_true, y_pred)
         return accuracy, precision, recall, f1_score
-    
+train()
