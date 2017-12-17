@@ -5,19 +5,19 @@ import itertools
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 
-NUM_CLASS = 18
 WINDOWN_SIZE = 128
 CHANNEL_LIST = ["x_sensor_acc","y_sensor_acc","z_sensor_acc","x_watch_acc","y_watch_gyr","z_watch_acc","x_watch_gyr","y_watch_acc","z_watch_gyr"]
 NUM_CHANNEL = len(CHANNEL_LIST)
 
-class_label = ["wrist","ankle","shoulder","haunch","knee","walking","running","kicking","cycling","brushing","washing_hand","wipe","sweep_floor","peel","slice","mixing","upstair","downstair"]
+class_label = ["wrist","ankle","shoulder","haunch","knee","walking","running","cycling","brushing","washing_hand","wipe","peel","slice","mixing","upstair","downstair"]
+NUM_CLASS = len(class_label)
 class_label_int = {val:str(idx) for idx, val in enumerate(class_label)}
 
 def read_data(data_path, split = "train"):
     """ Read data """
 
     # Fixed params
-    n_class = 18
+    n_class = NUM_CLASS
     n_steps = WINDOWN_SIZE
 
     # Paths
@@ -62,7 +62,7 @@ def standardize(train, test):
 
     return X_train, X_test
 
-def one_hot(labels, n_class = 18):
+def one_hot(labels, n_class = NUM_CLASS):
     """ One-hot encoding """
     expansion = np.eye(n_class)
     y = expansion[:, labels-1].T
