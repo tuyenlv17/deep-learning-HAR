@@ -16,9 +16,9 @@ from random import shuffle
 # get_ipython().magic(u'run utils/utilities.py')
 # get_ipython().magic(u'run HAR-CNN-GPU.py')
 import sys
-import CNN_GPU
+from CNN_GPU import train
 sys.path.append('utils')
-import utilities
+from utilities import *
 
 # In[3]:
 
@@ -279,24 +279,7 @@ def randomTrainFile():
                 wf.write(record[file_idx] + "\n")
     print(total0, total10)
 
-
-# In[11]:
-
-
-# !rm -rf datasets/PTIT/normalized*
-# #!mkdir -p datasets/PTIT/normalized/{train,test}/sensor
-# !mkdir -p datasets/PTIT/normalized/train/sensor
-# !mkdir -p datasets/PTIT/normalized/test/sensor
-# !mkdir -p datasets/PTIT/normalized_random/train/sensor
-# !mkdir -p datasets/PTIT/normalized_random/test/sensor
-# prepareTempTrainTestFormat()
-# randomTrainFile()
-
-
-# In[14]:
-
-
-for cdir in ["014"]:
+for cdir in ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011","013", "014"]:
     os.system(u'rm -rf datasets/PTIT/normalized*')
     #!mkdir -p datasets/PTIT/normalized/{train,test}/sensor
     os.system(u'mkdir -p datasets/PTIT/normalized/train/sensor')

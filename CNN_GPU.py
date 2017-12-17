@@ -322,12 +322,11 @@ def train():
         precision = precision_score(y_true, y_pred, average='macro')
         recall = recall_score(y_true, y_pred, average='macro')
         f1 = f1_score(y_true, y_pred, average='macro')
-#         print precision_recall_fscore_support(y_true, y_pred, average='macro', labels=class_label)
-#         print 'Accuracy:', accuracy_score(y_true, y_pred)
-#         print 'F1 score:', f1
-#         print 'Recall:', recall
-#         print 'Precision:', precision
-#         print '\n clasification report:\n', classification_report(y_true,y_pred,digits=5)
-#         print '\n confussion matrix:\n',confusion_matrix(y_true, y_pred)
+        print precision_recall_fscore_support(y_true, y_pred, average='macro', labels=class_label)
+        print 'Accuracy:', accuracy_score(y_true, y_pred)
+        print 'F1 score:', f1
+        print 'Recall:', recall
+        print 'Precision:', precision
+        print '\n clasification report:\n', classification_report(y_true,y_pred,digits=5)
+        print '\n confussion matrix:\n',confusion_matrix(y_true, y_pred)
         return accuracy, precision, recall, f1
-train()
