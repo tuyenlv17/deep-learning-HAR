@@ -12,12 +12,12 @@ import pandas as pd
 import numpy as np
 import os
 
-NUM_CLASS = 18
 WINDOWN_SIZE = 128
 CHANNEL_LIST = ["x_sensor_acc","y_sensor_acc","z_sensor_acc","x_watch_acc","y_watch_gyr","z_watch_acc","x_watch_gyr","y_watch_acc","z_watch_gyr"]
 NUM_CHANNEL = len(CHANNEL_LIST)
 
 class_label = ["wrist","ankle","shoulder","haunch","knee","walking","running","kicking","cycling","brushing","washing_hand","wipe","sweep_floor","peel","slice","mixing","upstair","downstair"]
+NUM_CLASS = len(class_label)
 class_label_int = {val:str(idx) for idx, val in enumerate(class_label)}
 
 def read_data(data_path, split = "train"):
@@ -238,11 +238,6 @@ with graph.as_default():
 # ### Train the network
 
 # In[ ]:
-
-
-if (os.path.exists('checkpoints-cnn') == False):
-    get_ipython().system(u'mkdir checkpoints-cnn')
-
 
 # In[ ]:
 
