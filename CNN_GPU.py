@@ -65,7 +65,6 @@ def read_data(data_path, split = "train"):
     i_ch = 0
     for fil_ch in channel_files:
         channel_name = fil_ch[:-4]
-        print channel_name
         dat_ = pd.read_csv(os.path.join(path_signals,fil_ch), delim_whitespace = True, header = None)
         X[:,:,i_ch] = dat_.as_matrix()
 
@@ -161,6 +160,7 @@ with graph.as_default():
     # Accuracy
     correct_pred = tf.equal(tf.argmax(logits, 1), tf.argmax(labels_, 1))
     accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32), name='accuracy')
+    prediction=tf.argmax(logits,1)
     
 with graph.as_default():
     saver = tf.train.Saver()
@@ -192,8 +192,6 @@ def train_model(graph, X_tr, y_tr):
 def test_model(graph, X_test, y_test):
     global accuracy
     test_acc = []
-    with graph.as_default():
-        prediction=tf.argmax(logits,1)
     with tf.Session(graph=graph) as sess:
         # Restore
         saver.restore(sess, tf.train.latest_checkpoint('checkpoints-cnn'))
@@ -208,8 +206,9 @@ def test_model(graph, X_test, y_test):
 
         test_acc.append(batch_acc)
         print("Test accuracy: {:.6f}".format(np.mean(test_acc)))
-    #     print y_true
-    #     print y_pred
+        print X_test.shape
+        print y_test.shape
+        print batch_y_pred.shape
         sk_class_labels = [i for i in range(NUM_CLASS)]
         accuracy1 = accuracy_score(y_true, y_pred)
         precision = precision_score(y_true, y_pred, average='macro')
@@ -244,6 +243,8 @@ def train():
     X_train, labels_train, list_ch_train = read_data(data_path="./datasets/PTIT/normalized", split="train") # train
     X_test, labels_test, list_ch_test = read_data(data_path=rootDatasetDir, split="test") # test
     assert list_ch_train == list_ch_test, "Mistmatch in channels!"
+    
+    print "channel list", list_ch_train
 
 #     X_train, X_test = standardize(X_train, X_test)
 
@@ -264,8 +265,8 @@ def train():
     
 #     graph = build_net()
     print "training model"
-    train_model(graph, X_tr, y_tr)
+#     train_model(graph, X_tr, y_tr)
     print "load model and test"
     test_model(graph, X_test, y_test)
-    print getPredicted(graph, X_test)
-train()
+#    print getPredicted(graph, X_test)
+#train()

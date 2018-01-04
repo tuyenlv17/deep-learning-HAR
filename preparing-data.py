@@ -240,8 +240,8 @@ def prepareTempTrainTestFormat(test_dir):
     train_window_cnt = dict.fromkeys(class_label_vn, 0)
     test_window_cnt = dict.fromkeys(class_label_vn, 0)
     prepareTrainTestFile(trainDir, test_dir)
-    print ("training window count ", train_window_cnt)
-    print ("test window count ", test_window_cnt)
+#     print ("training window count ", train_window_cnt)
+#     print ("test window count ", test_window_cnt)
 
 
 # In[10]:
@@ -277,10 +277,11 @@ def randomTrainFile():
             for record in records:
 #                 print record[file_idx]
                 wf.write(record[file_idx] + "\n")
-    print(total0, total10)
+#     print(total0, total10)
 
 res = []
 for cdir in ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011","013", "014"]:
+    print cdir
     os.system(u'rm -rf datasets/PTIT/normalized*')
     #!mkdir -p datasets/PTIT/normalized/{train,test}/sensor
     os.system(u'mkdir -p datasets/PTIT/normalized/train/sensor')
@@ -288,6 +289,4 @@ for cdir in ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010
     os.system(u'mkdir -p datasets/PTIT/normalized_random/train/sensor')
     os.system(u'mkdir -p datasets/PTIT/normalized_random/test/sensor')
     prepareTempTrainTestFormat([cdir])
-    randomTrainFile()
-    res.append(train())
-print res
+    train()
