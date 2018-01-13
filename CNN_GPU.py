@@ -107,6 +107,7 @@ graph = tf.Graph()
 
 # Construct placeholders
 with graph.as_default():
+	tf.set_random_seed(1234)
     inputs_ = tf.placeholder(tf.float32, [None, seq_len, n_channels], name = 'inputs')
     labels_ = tf.placeholder(tf.float32, [None, n_classes], name = 'labels')
     keep_prob_ = tf.placeholder(tf.float32, name = 'keep')
