@@ -265,7 +265,7 @@ def train():
     
 #     graph = build_net()
     print "training model"
-     train_model(graph, X_tr, y_tr)
+    train_model(graph, X_tr, y_tr)
     print "load model and test"
     test_model(graph, X_test, y_test)
 #    print getPredicted(graph, X_test)
